@@ -12,7 +12,7 @@ class Individuo:
         self.__mejor  = 0
         # cv2.imshow("maskara", cromosoma)
         # print("fitness", self.__fitness)
-        print("binario FxC", cromosoma.shape)
+        # print("binario FxC", cromosoma.shape)
 
     def getIndividuo(self):
         return self.__cromosoma

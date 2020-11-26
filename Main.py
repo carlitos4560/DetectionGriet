@@ -13,6 +13,9 @@ class Main:
         return str("comenzando")
 
     def read(self):
+        # return "crack.jpg"
+        # return "crack1.jpeg"
+        # return "crack2.jpg"
         return "grieta1.jpg"
         # return "grietafalsa.jpg"
 
@@ -82,7 +85,7 @@ if __name__ == "__main__":
     | Generar una cantidad de generaciones    |
     *******************************************
     """
-    generaciones = 10
+    generaciones = 5
     mejorIndividuo = algoritmoGenetico.generaciones(generaciones)
     # print(mejorIndividuo[0])
     cv2.imshow("mejor Individuo", poblacionInicial.seleccion(mejorIndividuo).getIndividuo())

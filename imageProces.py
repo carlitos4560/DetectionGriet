@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import math
 
 class ImageProces:
 
@@ -49,5 +50,11 @@ class ImageProces:
         return binario
 
     def __gaussian(self, img):
-        blur = cv2.blur(img, (5, 5))
+        #blur funciona bien para todos los casos
+        # blur = cv2.blur(img, (5, 5))
+        # sigma = 21  # for Gaussian Kernel
+        # kernel = 2 * math.ceil(2 * sigma) + 1
+        #tambien funciona bien pero con fixma de 3
+        blur = cv2.GaussianBlur(img, (5, 5), 3)
+        # blur = cv2.subtract(img, blur)
         return blur

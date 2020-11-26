@@ -31,7 +31,7 @@ class Poblacion:
         return self.__poblacion[posicion]
 
     def longitudPoblacion(self):
-        return len(self.__poblacion)
+        return len(self.__poblacion) - 1
 
     def mostrarPoblacion(self):
         for i in range(len(self.__poblacion)):

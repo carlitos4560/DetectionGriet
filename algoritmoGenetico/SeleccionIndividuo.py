@@ -15,12 +15,21 @@ class SeleccionIndividuo:
 
     def torneo(self):
         longitudPoblacion = self.__poblacion.longitudPoblacion()
-        limite = int(longitudPoblacion / 2)
+        #kAleatorio es determina la catidad de parejas por generacion
+        kAleatorio = random.randint(0, longitudPoblacion)
+        # print("Aleatorio", kAleatorio)
+        while kAleatorio % 2 != 0:
+            kAleatorio = random.randint(0, longitudPoblacion)
+            # print("Aleatorio", kAleatorio)
+        # limite = int(longitudPoblacion / 2)
+        limite = kAleatorio
         for i in range(0, limite):
-            aleatorio = random.randint(0, longitudPoblacion - 1)
-            self.__seleccionados1.append(self.__poblacion.seleccion(aleatorio))
-            aleatorio = random.randint(0, longitudPoblacion - 1)
-            self.__seleccionados2.append(self.__poblacion.seleccion(aleatorio))
+            aleatorio1 = random.randint(0, longitudPoblacion)
+            self.__seleccionados1.append(self.__poblacion.seleccion(aleatorio1))
+            aleatorio2 = random.randint(0, longitudPoblacion)
+            while aleatorio2 == aleatorio1:
+                aleatorio2 = random.randint(0, longitudPoblacion - 1)
+            self.__seleccionados2.append(self.__poblacion.seleccion(aleatorio2))
         return self.__seleccionados1, self.__seleccionados2
 
     def mostrarSeleccion1(self):

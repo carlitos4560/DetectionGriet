@@ -8,7 +8,6 @@ class AlgoritmoGenetico:
 
     def generaciones(self, generaciones):
         elitista = None
-        mejorHijo = None
         while(generaciones > 0):
             """
             ----------------------------------------
